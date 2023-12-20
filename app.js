@@ -17,6 +17,8 @@ connectDB()
 
 // Routes 
 app.use('/api/contacts', require('./routes/contact.route.js'));
+app.use('/api/users', require('./routes/userRoute.route.js'));
+
 
 
 app.listen(PORT, () => {
