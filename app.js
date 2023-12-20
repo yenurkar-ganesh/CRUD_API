@@ -5,10 +5,15 @@ const dotenv = require('dotenv')
 PORT = process.env.PORT || 4200;
 
 const errorhandler = require('./middleware/errorhandler.js')
+const connectDB = require('./config/DBconnection.js')
 
 // middlewares 
 app.use(express.json())
 app.use(errorhandler)
+
+
+// DATABASE CONNECTION 
+connectDB()
 
 // Routes 
 app.use('/api/contacts', require('./routes/contact.route.js'));
